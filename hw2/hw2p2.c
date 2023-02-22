@@ -60,7 +60,7 @@ void *FirstThd(){
         //system("clear");
         printf("Test\n");
         clock_gettime(CLOCK_MONOTONIC, &tend);
-        printf("Time Elapsed %f ns\n", (((double)tend.tv_sec + 1.0e-9*tend.tv_nsec) - ((double)tstart.tv_sec + 1.0e-9*tstart.tv_nsec)));
+        printf("Time Elapsed %f s\n", (((double)tend.tv_sec + 1.0e-9*tend.tv_nsec) - ((double)tstart.tv_sec + 1.0e-9*tstart.tv_nsec)));
         wait_rest_of_period(&pinfo);
     }
 	//Exit pthread
