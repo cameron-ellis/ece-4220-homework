@@ -60,8 +60,8 @@ void *FirstThd(){
         //system("clear");
         printf("Test\n");
         clock_gettime(CLOCK_MONOTONIC, &tend);
-        printf("Time Elapsed %f ns\n", ((((double)tend.tv_sec + 1.0e-9*tend.tv_nsec) - ((double)tstart.tv_sec + 1.0e-9*tstart.tv_nsec))-2)*1.0e9);
-        sleep(2);
+        printf("Time Elapsed %f ns\n", (((double)tend.tv_sec + 1.0e-9*tend.tv_nsec) - ((double)tstart.tv_sec + 1.0e-9*tstart.tv_nsec)));
+        wait_rest_of_period(&pinfo);
     }
 	//Exit pthread
 	pthread_exit(0);
@@ -72,7 +72,7 @@ void *FirstThd(){
 int main(void) 
 {
 	//Declare variables	
-	pthread_t thrd1, thrd2, thrd3;
+	pthread_t thrd1;
     
 	pthread_create(&thrd1, NULL, &FirstThd, NULL);
 
